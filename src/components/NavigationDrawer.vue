@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer v-model="drawer" class="drawer">
+    <v-navigation-drawer v-model="drawer" class="drawer" width="300">
         <div class="content">
             
             <div class="cover">
@@ -153,7 +153,7 @@ export default {
 .cover__image {
     position: relative;
     border-radius: 0px 8px 8px 0px;
-    width: 256px;
+    width: 300px;
     height: 120px;
     background: lightgray 50% / cover no-repeat;
     /* background-image: url(); */
