@@ -107,7 +107,7 @@ export default {
         ],
         socials: [
             { text: '@lorrangmarques', icon: 'mdi-linkedin', header: 'LinkedIn' },
-            { text: '@lorrangmarques', icon: 'mdi-github', header: 'GitHub' },
+            { text: '@LGMarques9963', icon: 'mdi-github', header: 'GitHub' },
             { text: '@lorrangmarques', icon: 'mdi-instagram', header: 'Instagram' }
         ],
         languages: [
