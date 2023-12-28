@@ -16,8 +16,9 @@
       <v-container
         class="py-8 px-6"
         fluid
+        light
       >
-        <v-row>
+        <!-- <v-row>
           <v-col
             v-for="card in cards"
             :key="card"
@@ -47,7 +48,7 @@
               </v-list>
             </v-card>
           </v-col>
-        </v-row>
+        </v-row> -->
       </v-container>
     </v-main>
   </v-app>
