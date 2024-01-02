@@ -25,7 +25,7 @@ Welcome to my Curriculum Vitae (CV) project! This Vue.js and Vuetify-based web p
 1. Clone the repository to your local environment:
 
 ```bash
-   git clone https://github.com/your-username/cv-project.git
+   git clone https://github.com/LGMarques9963/curriculum-vue.git
 ```
 
 2. Navigate to the project directory and install the dependencies:
