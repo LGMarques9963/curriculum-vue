@@ -138,7 +138,7 @@ export default {
     justify-content: center;
     font-size: 16px;
     color: #2e2e48;
-    font-family: Outfit;
+    font-family: Outfit, sans-serif;
 }
 
 .cover {
@@ -156,7 +156,6 @@ export default {
     width: 300px;
     height: 120px;
     background: lightgray 50% / cover no-repeat;
-    /* background-image: url(); */
     background-size: cover;
     background-position: center;
     object-fit: cover;
@@ -212,7 +211,7 @@ export default {
     color: var(--Gray-Darker, #2E2E48);
 
     /* Heading/Heading 1 bold */
-    font-family: Outfit;
+    font-family: Outfit, sans-serif;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 500;
@@ -226,7 +225,7 @@ export default {
 
 
     /* Heading/Heading 2 bold */
-    font-family: Outfit;
+    font-family: Outfit, sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
@@ -242,7 +241,7 @@ export default {
 
 .infos {
     color: #79819a;
-    font-family: 'DM Sans';
+    font-family: 'DM Sans', sans-serif;
 }
 
 .info__text {
@@ -260,16 +259,6 @@ export default {
     font-weight: 500;
     color: #47516b;
 }
-
-/* 
-.row {
-    align-self: stretch;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
-} */
 
 .divider1 {
     position: absolute;
