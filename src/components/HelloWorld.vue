@@ -24,7 +24,7 @@
                             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" height="200px">
                             <v-card-title>{{ card.title }}</v-card-title>
                           </v-img>
-
+                          
                           <v-card-actions>
                             <v-btn text color="#5531A7" @click="show = !show">
                               DESCRIPTION
@@ -179,21 +179,21 @@ export default {
     cards: [
       {
         title: 'Curriculum Vitae',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
+        src: require('../assets/cv.jpeg'),
         flex: 12,
-        url: "https://git",
-        description: "A Curriculum WebPage"
+        url: "https://github.com/LGMarques9963/curriculum-vue.git",
+        description: "Curriculum Vitae is a dynamic Vue.js and Vuetify-powered web application that functions as a comprehensive resume. Showcasing my latest projects, professional experience, skills, education, and contact details, this page provides an interactive and aesthetically pleasing overview of my professional journey. Leveraging Vue.js for seamless interactivity and Vuetify for a polished material design, it ensures a responsive and visually appealing presentation of my skills and accomplishments. Explore my CV effortlessly and reach out easily through the provided contact information. 📄✨"
       },
       {
         title: 'Recipes App',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
+        src: require('../assets/recipe.jpeg'),
         flex: 6,
         url: "https://github.com/LGMarques9963/api-food-vue",
         description: "Recipes App is a front-end project developed for Vue.js learning purposes. It utilizes Vue.js, Vuetify, Axios, and VueRouter to create a responsive application. Users can explore and search for recipes based on cuisine, ingredients, and name, with detailed views showcasing preparation steps. Enjoy a seamless experience with this Vue.js-powered recipe app! 🍲"
       },
       {
         title: 'eCommerce System',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+        src: require('../assets/ecommerce.jpeg'),
         flex: 6,
         url: "https://github.com/LGMarques9963/FDS-TF-Sistema-de-Vendas",
         description: "A comprehensive sales system developed as the final project for the Software Development Fundamentals course. The backend, powered by Spring Boot, leverages Java and Maven for robust API functionalities, including client and order management. The frontend, designed with Vue.js, offers an intuitive user interface for seamless interaction. Key features encompass client and order handling, product management, and insightful statistics generation. The combination of Spring Boot and Vue.js showcases proficiency in backend development and frontend design, reflecting a well-rounded skill set in Java, web development, and RESTful API implementation."
