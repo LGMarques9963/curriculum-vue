@@ -78,7 +78,7 @@
                           <v-chip v-if="experience.active" class="ma-2" color="#efe2f9" text-color="#9251f7">
                             Present
                           </v-chip>
-                          <v-btn text v-else>
+                          <v-btn text>
                             <v-icon color="grey lighten-1" size="12" left>mdi-calendar</v-icon>
                             <span class="experience__period">{{ experience.period }}</span>
                           </v-btn>
@@ -158,20 +158,7 @@
                       </v-list-item>
                     </v-list>
                   </v-container>
-
-
                 </v-card>
-              </v-timeline-item>
-
-              <v-timeline-item color="grey" small>
-                <v-row justify="space-between">
-                  <v-col cols="7">
-                    John Leider placed this order on Online Store (checkout #1937432132572).
-                  </v-col>
-                  <v-col class="text-right" cols="5">
-                    15:25 EDT
-                  </v-col>
-                </v-row>
               </v-timeline-item>
             </v-timeline>
           </v-container>
@@ -201,8 +188,8 @@ export default {
         title: 'Recipes App',
         src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
         flex: 6,
-        url: "https://git",
-        description: "A Recipes App"
+        url: "https://github.com/LGMarques9963/api-food-vue",
+        description: "Recipes App is a front-end project developed for Vue.js learning purposes. It utilizes Vue.js, Vuetify, Axios, and VueRouter to create a responsive application. Users can explore and search for recipes based on cuisine, ingredients, and name, with detailed views showcasing preparation steps. Enjoy a seamless experience with this Vue.js-powered recipe app! 🍲"
       },
       {
         title: 'eCommerce System',
@@ -221,49 +208,22 @@ export default {
     ],
     experiences: [
       {
-        color: 'black',
-        icon: 'mdi-apple',
-        subtitle: 'Tech Lead',
-        title: 'Apple',
-        period: 'Oct 2021 - Present',
+        color: 'green',
+        icon: 'mdi-briefcase',
+        subtitle: 'Technical Support Analyst Jr.',
+        title: 'PagBrasil',
+        period: 'Oct 2021 - ',
         active: true,
-        location: 'Cupertino, CA',
+        location: 'Porto Alegre, RS',
       },
       {
         color: 'amber',
         icon: 'mdi-gesture-tap-button',
-        subtitle: 'Software Engineer',
-        title: 'Google',
+        subtitle: 'IT Intern',
+        title: 'CSN',
         period: 'Apr 2016 - Dec 2016',
         active: false,
-        location: 'Cupertino, CA',
-      },
-      {
-        color: 'green',
-        icon: 'mdi-gesture-tap',
-        subtitle: 'Software Engineer',
-        title: 'Facebook',
-        period: 'Jan 2016 - Apr 2016',
-        active: false,
-        location: 'Cupertino, CA',
-      },
-      {
-        color: 'blue',
-        icon: 'mdi-gesture-swipe-right',
-        subtitle: 'Software Engineer',
-        title: 'Microsoft',
-        period: 'Jun 2015 - Dec 2015',
-        active: false,
-        location: 'Cupertino, CA',
-      },
-      {
-        color: 'purple',
-        icon: 'mdi-gesture-swipe-left',
-        subtitle: 'Software Engineer',
-        title: 'Amazon',
-        period: 'Jun 2014 - Jun 2015',
-        active: false,
-        location: 'Cupertino, CA',
+        location: 'Volta Redonda, RJ',
       },
     ],
     skills: [
