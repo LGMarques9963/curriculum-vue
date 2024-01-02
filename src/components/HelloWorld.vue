@@ -68,9 +68,9 @@
                         </v-list-item-avatar>
 
                         <v-list-item-content>
-                          <v-list-item-subtitle v-text="experience.subtitle"></v-list-item-subtitle>
+                          <v-list-item-subtitle>{{ experience.subtitle }}</v-list-item-subtitle>
 
-                          <v-list-item-title v-text="experience.title"></v-list-item-title>
+                          <v-list-item-title>{{ experience.title }}</v-list-item-title>
 
                         </v-list-item-content>
 
@@ -93,32 +93,74 @@
                 </v-card>
               </v-timeline-item>
 
-              <v-timeline-item class="mb-4" color="grey" small>
-                <v-row justify="space-between">
-                  <v-col cols="7">
-                    Order confirmation email was sent to John Leider (john@vuetifyjs.com).
-                  </v-col>
-                  <v-col class="text-right" cols="5">
-                    15:25 EDT
-                  </v-col>
-                </v-row>
+              <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
+                <v-card color="#F7F9FC" elevation="0">
+                  <v-card-title><span class="tile__text">
+                      Skills
+                    </span></v-card-title>
+                  <v-container fluid>
+                    <v-row dense>
+                      <v-col v-for="skill in skills" :key="skill.title" cols="12">
+                        <v-card color="#F7F9FC" elevation="0">
+                          <v-card-title><span class="skill__title">{{ skill.title }}</span></v-card-title>
+
+                          <v-card-text>
+                            <v-row>
+                              <v-col v-for="item in skill.skills" :key="item.name" cols="3">
+                                <v-card class="skill__card" elevation="0" color="#F7F9FC">
+                                  <v-row align="center" class="spacer" no-gutters>
+                                    <v-col>
+                                      <v-avatar size="34px" color="#E1E7FE" class="ml-4">
+                                        <v-icon :color="item.color" size="24px">{{ item.icon }}</v-icon>
+                                      </v-avatar>
+                                    </v-col>
+
+                                    <v-col cols="auto">
+                                      <span v-html="item.name" class="skill__text mx-3"></span>
+                                    </v-col>
+                                  </v-row>
+                                </v-card>
+                              </v-col>
+                            </v-row>
+                          </v-card-text>
+                        </v-card>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-card>
               </v-timeline-item>
 
-              <v-timeline-item class="mb-4" hide-dot>
-                <v-btn class="mx-0">
-                  Resend Email
-                </v-btn>
-              </v-timeline-item>
+              <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
+                <v-card color="#F7F9FC" elevation="0">
+                  <v-card-title><span class="tile__text">
+                      Education
+                    </span></v-card-title>
+                  <v-container fluid>
+                    <v-list subheader two-line>
+                      <v-list-item v-for="e in education" :key="e.title">
+                        <v-list-item-avatar>
+                          <v-icon color="#5531A7" size="24px">mdi-school</v-icon>
+                        </v-list-item-avatar>
+                        <v-list-item-content>
+                          <v-list-item-subtitle>{{ e.subtitle }}</v-list-item-subtitle>
+                          <v-list-item-title>{{ e.title }}</v-list-item-title>
+                        </v-list-item-content>
+                        <v-list-item-action>
+                          <v-btn text>
+                            <v-icon color="grey lighten-1" size="12" left>mdi-calendar</v-icon>
+                            <span class="experience__period">{{ e.period }}</span>
+                          </v-btn>
+                          <v-btn text>
+                            <v-icon color="grey lighten-1" size="12" left>mdi-map-marker</v-icon>
+                            <span class="experience__location">{{ e.location }}</span>
+                          </v-btn>
+                        </v-list-item-action>
+                      </v-list-item>
+                    </v-list>
+                  </v-container>
 
-              <v-timeline-item class="mb-4" color="grey" small>
-                <v-row justify="space-between">
-                  <v-col cols="7">
-                    A $15.00 USD payment was processed on PayPal Express Checkout
-                  </v-col>
-                  <v-col class="text-right" cols="5">
-                    15:25 EDT
-                  </v-col>
-                </v-row>
+
+                </v-card>
               </v-timeline-item>
 
               <v-timeline-item color="grey" small>
@@ -223,7 +265,153 @@ export default {
         active: false,
         location: 'Cupertino, CA',
       },
-      
+    ],
+    skills: [
+      {
+        title: 'Frontend',
+        skills: [
+          {
+            name: 'Vue.js',
+            icon: 'mdi-vuejs',
+            color: '#41B883',
+          },
+          {
+            name: 'HTML',
+            icon: 'mdi-language-html5',
+            color: '#E34F26',
+          },
+          {
+            name: 'CSS',
+            icon: 'mdi-language-css3',
+            color: '#1572B6',
+          },
+          {
+            name: 'JavaScript',
+            icon: 'mdi-language-javascript',
+            color: '#F7DF1E',
+          },
+        ],
+        icon: 'mdi-language-javascript',
+        color: '#F7DF1E',
+      },
+      {
+        title: 'Backend',
+        skills: [
+          {
+            name: 'Java',
+            icon: 'mdi-language-java',
+            color: '#007396',
+          },
+          {
+            name: 'Spring Boot',
+            icon: 'spring',
+            color: '#6DB33F',
+          },
+          {
+            name: 'PHP',
+            icon: 'mdi-language-php',
+            color: '#777BB4',
+          },
+          {
+            name: 'Python',
+            icon: 'mdi-language-python',
+            color: '#3776AB',
+          },
+          {
+            name: 'Django',
+            icon: 'django24',
+            color: '#092E20',
+          },
+        ],
+        icon: 'mdi-code-tags',
+        color: '#516CF7',
+      },
+      {
+        title: 'Database',
+        skills: [
+          {
+            name: 'MySQL',
+            icon: 'mdi-database',
+            color: '#4479A1',
+          },
+          {
+            name: 'PostgreSQL',
+            icon: 'mdi-database',
+            color: '#336791',
+          },
+          {
+            name: 'Oracle',
+            icon: 'mdi-database',
+            color: '#F80000',
+          },
+          {
+            name: 'MongoDB',
+            icon: 'mdi-database',
+            color: '#47A248',
+          },
+        ],
+        icon: 'mdi-database',
+        color: '#4479A1',
+      },
+      {
+        title: 'DevOps',
+        skills: [
+          {
+            name: 'Docker',
+            icon: 'mdi-docker',
+            color: '#2496ED',
+          },
+          {
+            name: 'AWS',
+            icon: 'mdi-aws',
+            color: '#FF9900',
+          },
+          {
+            name: 'Azure',
+            icon: 'mdi-microsoft-azure',
+            color: '#0089D6',
+          },
+        ],
+      },
+      {
+        title: 'Tools',
+        skills: [
+          {
+            name: 'Git',
+            icon: 'mdi-git',
+            color: '#F05032',
+          },
+          {
+            name: 'GitHub',
+            icon: 'mdi-github',
+            color: '#181717',
+          },
+          {
+            name: 'GitLab',
+            icon: 'mdi-gitlab',
+            color: '#FCA121',
+          },
+          {
+            name: 'Jira',
+            icon: 'mdi-jira',
+            color: '#0052CC',
+          },
+        ],
+      },
+    ],
+    education: [
+      {
+        title: 'Pontifícia Universidade Católica do Rio Grande do Sul',
+        subtitle: 'Bachelor of Science - BS, Computer Science',
+        period: '2022-2026',
+        location: 'Porto Alegre, RS',
+      },
+      {
+        title: 'Escola Técnica Pandiá Calógeras',
+        subtitle: 'Técnico em Informática',
+        period: '2014 - 2016',
+        location: 'Volta Redonda, RJ',
+      },
     ],
     show: false,
   }),
@@ -288,5 +476,44 @@ export default {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.05px;
+}
+
+.skill__title {
+  color: var(--Gray-Darker, #2E2E48);
+
+  /* Body/Body 2 bold */
+  font-family: DM Sans;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 9px;
+  /* 128.571% */
+}
+
+.skill__card {
+  border-radius: 4px 0px 0px 4px;
+  background: var(--White, #FFF);
+  /* border: 1px solid var(--Gray-Light, #E4E7EB);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04); */
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2px;
+  align-self: stretch;
+}
+
+.skill__text {
+  color: var(--Gray-Darker, #2E2E48);
+
+  /* Body/Body 2 bold */
+  font-family: DM Sans;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 9px;
+  /* 128.571% */
 }
 </style>
