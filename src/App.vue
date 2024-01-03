@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <!-- <v-app-bar app color="primary" dark>
+    <!-- <v-app-bar app color="primary" dark dense>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -32,17 +32,20 @@
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar> -->
-
     <v-main>
       <router-view />
+      <!-- <tool-bar /> -->
     </v-main>
   </v-app>
 </template>
 
 <script>
+import ToolBar from "./components/ToolBar.vue";
 export default {
   name: "App",
-
+  components: {
+    ToolBar,
+  },
   data: () => ({
     //
   }),
@@ -55,4 +58,6 @@ export default {
 body {
   	margin: 0; line-height: normal;
 }
+
+
 </style>

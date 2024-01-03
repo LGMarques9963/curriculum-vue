@@ -52,7 +52,11 @@
                                     <v-list-item-subtitle class="info__text">
                                         {{ item.header }}
                                     </v-list-item-subtitle>
-                                    <v-list-item-title class="info__text info__header">{{ item.text }}</v-list-item-title>
+                                    <v-list-item-title class="info__text info__header">
+                                        <a :href="item.url" target="_blank" class="info__text info__header no_underline">
+                                            {{ item.text }}
+                                        </a>
+                                    </v-list-item-title>
                                 </v-list-item-content>
                             </div>
                         </v-list-item>
@@ -100,14 +104,14 @@ export default {
             ['mdi-alert-octagon', 'Spam'],
         ],
         basic_info: [
-            { text: 'lorrangmarques@gmail.com', icon: 'mdi-email-outline', header: 'Email' },
-            { text: '##', icon: 'mdi-link-variant', header: 'Website' },
-            { text: '+55 11 91234-5678', icon: 'mdi-phone', header: 'Phone' },
+            { text: 'lorrangmarques@gmail.com', icon: 'mdi-email-outline', header: 'Email', url: "" },
+            { text: '##', icon: 'mdi-link-variant', header: 'Website', url: "https://happy-island-05692bd10.4.azurestaticapps.net/#/" },
+            { text: '+55 11 91234-5678', icon: 'mdi-phone', header: 'Phone', url: "" },
             { text: 'São Paulo, Brazil', icon: 'mdi-map-marker', header: 'Address' }
         ],
         socials: [
-            { text: '@lorrangmarques', icon: 'mdi-linkedin', header: 'LinkedIn' },
-            { text: '@LGMarques9963', icon: 'mdi-github', header: 'GitHub' },
+            { text: '@lorrangmarques', icon: 'mdi-linkedin', header: 'LinkedIn', url: "https://www.linkedin.com/in/lgmarques/" },
+            { text: '@LGMarques9963', icon: 'mdi-github', header: 'GitHub', url: "https://github.com/LGMarques9963" },
             { text: '@lorrangmarques', icon: 'mdi-instagram', header: 'Instagram' }
         ],
         languages: [
@@ -278,5 +282,9 @@ export default {
     height: 1px;
     overflow: hidden;
     flex-shrink: 0;
+}
+
+.no_underline {
+    text-decoration: none;
 }
 </style>

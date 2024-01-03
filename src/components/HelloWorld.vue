@@ -7,7 +7,7 @@
       </v-col>
       <v-col>
         <v-main class="main__background">
-
+          
           <v-container class="py-8 px-6 content__container" fluid light>
             <v-timeline dense clipped align-top>
               <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
@@ -16,38 +16,39 @@
                 </span>
                 <latest-projects />
               </v-timeline-item>
-
+              
               <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
-
-
+                
+                
                 <span class="tile__text">
                   Experience
                 </span>
-
+                
                 <experiences />
-
+                
               </v-timeline-item>
-
+              
               <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
                 <span class="tile__text">
                   Skills
                 </span>
                 <skills />
               </v-timeline-item>
-
+              
               <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
                 <span class="tile__text">
                   Education
                 </span>
                 <education />
-
-
+                
+                
               </v-timeline-item>
             </v-timeline>
           </v-container>
         </v-main>
       </v-col>
     </v-row>
+    <tool-bar />
   </v-app>
 </template>
 
@@ -57,6 +58,7 @@ import LatestProjects from './LatestProjects.vue';
 import Experiences from './Experiences.vue';
 import Skills from './Skills.vue';
 import Education from './Education.vue';
+import ToolBar from './ToolBar.vue';
 
 export default {
   name: 'HelloWorld',
@@ -66,6 +68,7 @@ export default {
     Experiences,
     Skills,
     Education,
+    ToolBar,
   },
   data: () => ({
     drawer: null,
