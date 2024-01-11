@@ -3,7 +3,7 @@
         <v-row dense>
             <v-col v-for="skill in skills" :key="skill.title" cols="12">
                 <v-card :color="cardColor" elevation="0">
-                    <v-card-title><span class="skill__title">{{ skill.title }}</span></v-card-title>
+                    <v-card-title><span class="skill__title">{{ $vuetify.lang.t(skill.title) }}</span></v-card-title>
 
                     <v-card-text>
                         <v-row>
@@ -98,7 +98,7 @@ export default {
                 color: '#516CF7',
             },
             {
-                title: 'Database',
+                title: '$vuetify.database',
                 skills: [
                     {
                         name: 'MySQL',
@@ -145,7 +145,7 @@ export default {
                 ],
             },
             {
-                title: 'Tools',
+                title: '$vuetify.tools',
                 skills: [
                     {
                         name: 'Git',

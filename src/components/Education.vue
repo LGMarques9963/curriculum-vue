@@ -6,7 +6,7 @@
                     <v-icon color="#5531A7" size="24px">mdi-school</v-icon>
                 </v-list-item-avatar>
                 <v-list-item-content>
-                    <v-list-item-subtitle>{{ e.subtitle }}</v-list-item-subtitle>
+                    <v-list-item-subtitle>{{ $vuetify.lang.t(e.subtitle) }}</v-list-item-subtitle>
                     <v-list-item-title>{{ e.title }}</v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-action>
@@ -31,13 +31,13 @@ export default {
         education: [
             {
                 title: 'Pontifícia Universidade Católica do Rio Grande do Sul',
-                subtitle: 'Bachelor of Science - BS, Computer Science',
+                subtitle: '$vuetify.titleCS',
                 period: '2022-2026',
                 location: 'Porto Alegre, RS',
             },
             {
                 title: 'Escola Técnica Pandiá Calógeras',
-                subtitle: 'Técnico em Informática',
+                subtitle: '$vuetify.titleItTech',
                 period: '2014 - 2016',
                 location: 'Volta Redonda, RJ',
             },

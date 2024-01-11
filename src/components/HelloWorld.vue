@@ -12,7 +12,7 @@
             <v-timeline dense clipped align-top>
               <v-timeline-item class="mb-4" :color="timelineColor" :icon-color="timelineColor" small>
                 <span class="tile__text">
-                  Latest Projects
+                  {{ $vuetify.lang.t('$vuetify.latestProjects') }}
                 </span>
                 <latest-projects />
               </v-timeline-item>
@@ -21,7 +21,7 @@
                 
                 
                 <span class="tile__text">
-                  Experience
+                  {{ $vuetify.lang.t('$vuetify.experience') }}
                 </span>
                 
                 <experiences />
@@ -30,14 +30,14 @@
               
               <v-timeline-item class="mb-4" :color="timelineColor" :icon-color="timelineColor" small>
                 <span class="tile__text">
-                  Skills
+                  {{ $vuetify.lang.t('$vuetify.technologies') }}
                 </span>
                 <skills />
               </v-timeline-item>
               
               <v-timeline-item class="mb-4" :color="timelineColor" :icon-color="timelineColor" small>
                 <span class="tile__text">
-                  Education
+                  {{ $vuetify.lang.t('$vuetify.education') }}
                 </span>
                 <education />
                 

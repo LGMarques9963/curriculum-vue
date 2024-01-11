@@ -4,7 +4,7 @@
             <v-menu top :offset-y="offset" :color="dark ? '#232339' : 'white'" open-on-hover>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn v-bind="attrs" v-on="on" :color="dark ? '#232339' : 'white'">
-                        <span>Language</span>
+                        <!-- <span>{{ $vuetify.lang.t('$vuetify.languages') }}</span> -->
 
                         <v-icon>mdi-translate</v-icon>
                     </v-btn>
@@ -16,9 +16,8 @@
                             <span :class="item.icon"></span>
                         </v-list-item-icon>
                         <v-list-item-title>
-                            <v-btn text>
+                            <v-btn text @click="changeLocale(item.locale)">
                                 {{ item.title }}
-
                             </v-btn>
                         </v-list-item-title>
                     </v-list-item>
@@ -26,7 +25,7 @@
             </v-menu>
 
             <v-btn text @click="toggle">
-                <span>Dark/Light Mode</span>
+                <!-- <span>Dark/Light Mode</span> -->
 
                 <v-icon>mdi-theme-light-dark</v-icon>
             </v-btn>
@@ -40,9 +39,9 @@ export default {
         value: 0,
         offset: true,
         items: [
-            { title: 'English', icon: "fi fi-gb" },
-            { title: 'Português', icon: "fi fi-br" },
-            { title: 'Español', icon: "fi fi-es" },
+            { title: 'English', icon: "fi fi-gb", locale: 'en' },
+            { title: 'Português', icon: "fi fi-br", locale: 'pt' },
+            { title: 'Español', icon: "fi fi-es", locale: 'es' },
         ],
     }),
 
@@ -50,12 +49,22 @@ export default {
         toggle() {
             this.$vuetify.theme.dark = !this.$vuetify.theme.dark
         },
+        changeLocale(locale) {
+            this.$vuetify.lang.current = locale;
+            this.$i18n.locale = locale;
+            console.log(this.$vuetify.lang.current)
+        },
     },
 
     computed: {
         dark() {
             return this.$vuetify.theme.dark
         },
+    },
+
+    created() {
+        console.log(this.$vuetify.lang.current)
+        console.log(this.$i18n.availableLocales);
     },
 }
 </script>

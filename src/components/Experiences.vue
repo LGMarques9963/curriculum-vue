@@ -18,7 +18,7 @@
 
                 <v-list-item-action>
                     <v-chip v-if="experience.active" class="ma-2" :color="chipBackgroundColor" :text-color="chipTextColor">
-                        Present
+                        {{ $vuetify.lang.t('$vuetify.presentTime') }}
                     </v-chip>
                     <v-btn text v-if="!experience.active">
                         <v-icon color="grey lighten-1" size="12" left>mdi-calendar</v-icon>

@@ -15,7 +15,7 @@
                 </div>
                 
                 <div :class="dark ? 'infos__dark' : 'infos'">
-                    <div class="info__text">Contact Info</div>
+                    <div class="info__text">{{ $vuetify.lang.t('$vuetify.contact') }}</div>
                     <v-list shaped>
                         <v-list-item v-for="(item, i) in basic_info" :key="i">
                             <div class="row pt-4">
@@ -26,9 +26,12 @@
                                 </v-list-item-icon>
                                 <v-list-item-content>
                                     <v-list-item-subtitle class="info__text">
-                                        {{ item.header }}
+                                        {{ $vuetify.lang.t(item.header) }}
                                     </v-list-item-subtitle>
-                                    <v-list-item-title :class="dark ? 'info__header__dark' : 'info__header'">{{ item.text }}</v-list-item-title>
+                                    <v-list-item-title :class="dark ? 'info__header__dark' : 'info__header'">
+                                        <a :href="item.url" target="_blank" :class="dark ? 'info__header__dark no_underline' : 'info__header no_underline'">
+                                            {{ $vuetify.lang.t(item.text) }}
+                                        </a></v-list-item-title>
                                 </v-list-item-content>
                             </div>
                         </v-list-item>
@@ -39,7 +42,7 @@
                     <div class="divider1" />
                 </div>
                 <div :class="dark ? 'infos__dark' : 'infos'">
-                    <div class="info__text">Socials</div>
+                    <div class="info__text">{{ $vuetify.lang.t('$vuetify.socials') }}</div>
                     <v-list shaped>
                         <v-list-item v-for="(item, i) in socials" :key="i">
                             <div class="row pt-4">
@@ -67,7 +70,7 @@
                     <div class="divider1" />
                 </div>
                 <div :class="dark ? 'infos__dark' : 'infos'">
-                    <div class="info__text">Languages</div>
+                    <div class="info__text">{{ $vuetify.lang.t('$vuetify.languages') }}</div>
                     <v-list shaped>
                         <v-list-item v-for="(item, i) in languages" :key="i">
                             <div class="row pt-4">
@@ -75,9 +78,11 @@
                                     <span :class="item.icon"></span>
                                 </v-list-item-icon>
                                 <v-list-item-content>
-                                    <v-list-item-title :class="dark ? 'info__header__dark' : 'info__header'">{{ item.text }}</v-list-item-title>
+                                    <v-list-item-title :class="dark ? 'info__header__dark' : 'info__header'">
+                                        {{ $vuetify.lang.t(item.text) }}
+                                    </v-list-item-title>
                                     <v-list-item-subtitle class="info__text">
-                                        {{ item.header }}
+                                        {{ $vuetify.lang.t(item.header) }}
                                     </v-list-item-subtitle>
                                 </v-list-item-content>
                             </div>
@@ -104,9 +109,21 @@ export default {
             ['mdi-alert-octagon', 'Spam'],
         ],
         basic_info: [
-            { text: 'lorrangmarques@gmail.com', icon: 'mdi-email-outline', header: 'Email', url: "" },
-            { text: 'lgmarques.netlify.app', icon: 'mdi-link-variant', header: 'Website', url: "https://happy-island-05692bd10.4.azurestaticapps.net/#/" },
-            { text: 'Porto Alegre, Brazil', icon: 'mdi-map-marker', header: 'Address' }
+            { 
+                text: 'lorrangmarques@gmail.com', 
+                icon: 'mdi-email-outline',
+                header: '$vuetify.email',
+                url: "mailto:lorrangmarques@gmail.com" },
+            { 
+                text: 'lgmarques.netlify.app', 
+                icon: 'mdi-link-variant',
+                header: '$vuetify.website',
+                url: "https://lgmarques.netlify.app" },
+            { 
+                text: 'Porto Alegre, Brazil', 
+                icon: 'mdi-map-marker',
+                header: '$vuetify.address'
+            }
         ],
         socials: [
             { text: '@lorrangmarques', icon: 'mdi-linkedin', header: 'LinkedIn', url: "https://www.linkedin.com/in/lgmarques/" },
@@ -114,9 +131,9 @@ export default {
             { text: '@lorrangmarques', icon: 'mdi-instagram', header: 'Instagram' }
         ],
         languages: [
-            { text: 'Portuguese', icon: 'fi fi-br', header: 'Native' },
-            { text: 'English', icon: 'fi fi-gb', header: 'Fluent' },
-            { text: 'Spanish', icon: 'fi fi-es', header: 'Fluent' },
+            { text: '$vuetify.portuguese', icon: 'fi fi-br', header: '$vuetify.levelNative' },
+            { text: '$vuetify.english', icon: 'fi fi-gb', header: '$vuetify.levelFluent' },
+            { text: '$vuetify.spanish', icon: 'fi fi-es', header: '$vuetify.levelAdvanced' },
         ],
     }),
     computed: {

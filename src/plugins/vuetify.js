@@ -2,8 +2,138 @@ import Vue from "vue";
 import Vuetify from "vuetify/lib/framework";
 import django24 from '../assets/icons/light/icons8-django-24.svg';
 import spring from '../assets/icons/icons8-spring-boot.svg';
+import VueI18n from 'vue-i18n';
+
+import en from '@/undefined/en';
+import es from '@/undefined/es';
+import pt from '@/undefined/pt';
 
 Vue.use(Vuetify);
+Vue.use(VueI18n);
+
+const messages = {
+    en: {
+        $vuetify: {
+            dataIterator: {
+                rowsPerPageText: 'Items per page:',
+                rowsPerPageAll: 'All',
+                pageText: '{0}-{1} of {2}',
+                noResultsText: 'No matching records found',
+                nextPage: 'Next page',
+                prevPage: 'Previous page'
+            },
+            dataTable: {
+                rowsPerPageText: 'Rows per page:'
+            },
+            noDataText: 'No data available',
+            address: 'Address',
+            languages: 'Languages',
+            portuguese: 'Portuguese',
+            english: 'English',
+            spanish: 'Spanish',
+            contact: 'Contact Info',
+            socials: 'Socials',
+            levelNative: 'Native',
+            levelFluent: 'Fluent',
+            levelIntermediate: 'Intermediate',
+            levelBasic: 'Basic',
+            latestProjects: 'Latest Projects',
+            description: 'Description',
+            viwGithub: 'View on Github',
+            liveDemo: 'Live Demo',
+            technologies: 'Technologies',
+            experience: 'Experience',
+            education: 'Education',
+            skills: 'Skills',
+            tools: 'Tools',
+            database: 'Database',
+        },
+        hello: 'Hello World',
+    },
+    pt: {
+        $vuetify: {
+            dataIterator: {
+                rowsPerPageText: 'Itens por página:',
+                rowsPerPageAll: 'Todos',
+                pageText: '{0}-{1} de {2}',
+                noResultsText: 'Nenhum registro correspondente encontrado',
+                nextPage: 'Próxima página',
+                prevPage: 'Página anterior'
+            },
+            dataTable: {
+                rowsPerPageText: 'Linhas por página:'
+            },
+            noDataText: 'Nenhum dado disponível',
+            address: 'Endereço',
+            languages: 'Idiomas',
+            portuguese: 'Português',
+            english: 'Inglês',
+            spanish: 'Espanhol',
+            contact: 'Contato',
+            socials: 'Redes Sociais',
+            levelNative: 'Nativo',
+            levelFluent: 'Fluente',
+            levelIntermediate: 'Intermediário',
+            levelBasic: 'Básico',
+            latestProjects: 'Últimos Projetos',
+            description: 'Descrição',
+            viwGithub: 'Ver no Github',
+            liveDemo: 'Demo',
+            technologies: 'Tecnologias',
+            experience: 'Experiência',
+            education: 'Formação',
+            skills: 'Skills',
+            tools: 'Ferramentas',
+            database: 'Banco de Dados',
+
+        },
+        hello: 'Olá Mundo',
+    },
+    es: {
+        $vuetify: {
+            dataIterator: {
+                rowsPerPageText: 'Artículos por página:',
+                rowsPerPageAll: 'Todo',
+                pageText: '{0}-{1} de {2}',
+                noResultsText: 'No se encontraron registros coincidentes',
+                nextPage: 'Siguiente página',
+                prevPage: 'Página anterior'
+            },
+            dataTable: {
+                rowsPerPageText: 'Filas por página:'
+            },
+            noDataText: 'No hay datos disponibles',
+            address: 'Dirección',
+            languages: 'Idiomas',
+            portuguese: 'Portugués',
+            english: 'Inglés',
+            spanish: 'Español',
+            contact: 'Contacto',
+            socials: 'Redes Sociales',
+            levelNative: 'Nativo',
+            levelFluent: 'Fluido',
+            levelIntermediate: 'Intermedio',
+            levelBasic: 'Básico',
+            latestProjects: 'Últimos proyectos',
+            description: 'Descripción',
+            viwGithub: 'Ver en Github',
+            liveDemo: 'Demo',
+            technologies: 'Tecnologías',
+            experience: 'Experiencia',
+            education: 'Educación',
+            skills: 'Habilidades',
+            tools: 'Herramientas',
+            database: 'Base de datos',
+        },
+        hello: 'Hola Mundo',
+    },
+}
+
+const i18n = new VueI18n({
+    locale: 'en',
+    fallbackLocale: 'en',
+    messages,
+})
 
 
 
@@ -33,5 +163,10 @@ export default new Vuetify({
                 warning: '#FFC107'
             },	
         }
-    }
+    },
+    lang: {
+        // t: (key, ...params) => i18n.t(key, params),
+        locales: { en, pt, es },
+        current: 'en'
+    },
 });

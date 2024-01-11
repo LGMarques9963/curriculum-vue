@@ -10,19 +10,19 @@
 
                     <v-card-actions>
                         <v-btn text color="#8361d1" @click="card.show = !card.show">
-                            DESCRIPTION
+                            {{ $vuetify.lang.t('$vuetify.description') }}
                             <v-icon v-if="!card.show" right>mdi-chevron-down</v-icon>
                             <v-icon v-else right>mdi-chevron-up</v-icon>
                         </v-btn>
                         <v-spacer></v-spacer>
 
                         <v-btn text :href="card.url" target="_blank">
-                            VIEW ON GITHUB
+                            {{ $vuetify.lang.t('$vuetify.viewGithub') }}
                             <v-icon right>mdi-github</v-icon>
                         </v-btn>
 
                         <v-btn text :href="card.demo" target="_blank">
-                            LIVE DEMO
+                            {{ $vuetify.lang.t('$vuetify.liveDemo') }}
                             <v-icon right>mdi-open-in-new</v-icon>
                         </v-btn>
                     </v-card-actions>
@@ -31,7 +31,7 @@
                             <v-divider></v-divider>
 
                             <v-card-text>
-                                {{ card.description }}
+                                {{ $vuetify.lang.t(card.description) }}
                             </v-card-text>
                         </div>
                     </v-expand-transition>
@@ -52,7 +52,8 @@ export default {
                 flex: 12,
                 url: "https://github.com/LGMarques9963/curriculum-vue.git",
                 demo: "https://happy-island-05692bd10.4.azurestaticapps.net",
-                description: "Curriculum Vitae is a dynamic Vue.js and Vuetify-powered web application that functions as a comprehensive resume. Showcasing my latest projects, professional experience, skills, education, and contact details, this page provides an interactive and aesthetically pleasing overview of my professional journey. Leveraging Vue.js for seamless interactivity and Vuetify for a polished material design, it ensures a responsive and visually appealing presentation of my skills and accomplishments. Explore my CV effortlessly and reach out easily through the provided contact information. 📄✨",
+                // description: "Curriculum Vitae is a dynamic Vue.js and Vuetify-powered web application that functions as a comprehensive resume. Showcasing my latest projects, professional experience, skills, education, and contact details, this page provides an interactive and aesthetically pleasing overview of my professional journey. Leveraging Vue.js for seamless interactivity and Vuetify for a polished material design, it ensures a responsive and visually appealing presentation of my skills and accomplishments. Explore my CV effortlessly and reach out easily through the provided contact information. 📄✨",
+                description: "$vuetify.descCv",
                 show: false,
             },
             {
@@ -61,7 +62,8 @@ export default {
                 flex: 6,
                 url: "https://github.com/LGMarques9963/api-food-vue",
                 demo: "https://calm-smoke-0ceaaed10.4.azurestaticapps.net/#/",
-                description: "Recipes App is a front-end project developed for Vue.js learning purposes. It utilizes Vue.js, Vuetify, Axios, and VueRouter to create a responsive application. Users can explore and search for recipes based on cuisine, ingredients, and name, with detailed views showcasing preparation steps. Enjoy a seamless experience with this Vue.js-powered recipe app! 🍲",
+                // description: "Recipes App is a front-end project developed for Vue.js learning purposes. It utilizes Vue.js, Vuetify, Axios, and VueRouter to create a responsive application. Users can explore and search for recipes based on cuisine, ingredients, and name, with detailed views showcasing preparation steps. Enjoy a seamless experience with this Vue.js-powered recipe app! 🍲",
+                description: "$vuetify.descRecipe",
                 show: false,
             },
             {
@@ -70,7 +72,8 @@ export default {
                 flex: 6,
                 url: "https://github.com/LGMarques9963/FDS-TF-Sistema-de-Vendas",
                 demo: "",
-                description: "A comprehensive sales system developed as the final project for the Software Development Fundamentals course. The backend, powered by Spring Boot, leverages Java and Maven for robust API functionalities, including client and order management. The frontend, designed with Vue.js, offers an intuitive user interface for seamless interaction. Key features encompass client and order handling, product management, and insightful statistics generation. The combination of Spring Boot and Vue.js showcases proficiency in backend development and frontend design, reflecting a well-rounded skill set in Java, web development, and RESTful API implementation.",
+                // description: "A comprehensive sales system developed as the final project for the Software Development Fundamentals course. The backend, powered by Spring Boot, leverages Java and Maven for robust API functionalities, including client and order management. The frontend, designed with Vue.js, offers an intuitive user interface for seamless interaction. Key features encompass client and order handling, product management, and insightful statistics generation. The combination of Spring Boot and Vue.js showcases proficiency in backend development and frontend design, reflecting a well-rounded skill set in Java, web development, and RESTful API implementation.",
+                description: "$vuetify.descEcommerce",
                 show: false,
             },
         ],
