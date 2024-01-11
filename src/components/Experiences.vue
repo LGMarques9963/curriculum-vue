@@ -10,7 +10,7 @@
                 </v-list-item-avatar>
 
                 <v-list-item-content>
-                    <v-list-item-subtitle>{{ experience.subtitle }}</v-list-item-subtitle>
+                    <v-list-item-subtitle>{{ $vuetify.lang.t(experience.subtitle) }}</v-list-item-subtitle>
 
                     <v-list-item-title>{{ experience.title }}</v-list-item-title>
 
@@ -42,7 +42,7 @@ export default {
             {
                 color: 'green',
                 icon: 'mdi-briefcase',
-                subtitle: 'Technical Support Analyst Jr.',
+                subtitle: '$vuetify.techSupport',
                 title: 'PagBrasil',
                 period: 'Oct 2021 - ',
                 active: true,
@@ -51,7 +51,7 @@ export default {
             {
                 color: 'amber',
                 icon: 'mdi-gesture-tap-button',
-                subtitle: 'IT Intern',
+                subtitle: '$vuetify.itIntern',
                 title: 'CSN',
                 period: 'Apr 2016 - Dec 2016',
                 active: false,

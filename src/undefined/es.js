@@ -1,4 +1,4 @@
-import { es } from "vuetify/lib/locale";
+import { es, it } from "vuetify/lib/locale";
 
 export default {
   ...es,
@@ -34,4 +34,6 @@ export default {
   descCv: "Curriculum Vitae es una aplicación web dinámica impulsada por Vue.js y Vuetify que funciona como un currículum integral. Mostrando mis últimos proyectos, experiencia profesional, habilidades, educación y detalles de contacto, esta página proporciona una visión interactiva y estéticamente agradable de mi trayectoria profesional. Aprovechando Vue.js para una interactividad perfecta y Vuetify para un diseño de material pulido, garantiza una presentación receptiva y visualmente atractiva de mis habilidades y logros. Explore mi CV fácilmente y comuníquese fácilmente a través de la información de contacto proporcionada. 📄✨",
   descRecipe: "Recipes App es un proyecto front-end desarrollado con fines de aprendizaje de Vue.js. Utiliza Vue.js, Vuetify, Axios y VueRouter para crear una aplicación receptiva. Los usuarios pueden explorar y buscar recetas según la cocina, ingredientes y nombre, con vistas detalladas que muestran los pasos de preparación. ¡Disfruta de una experiencia sin problemas con esta aplicación de recetas impulsada por Vue.js! 🍲",
   descEcommerce: "Un sistema integral de ventas desarrollado como proyecto final para el curso de Fundamentos del Desarrollo de Software. El backend, impulsado por Spring Boot, utiliza Java y Maven para funcionalidades sólidas de API, que incluyen el manejo de clientes y pedidos. El frontend, diseñado con Vue.js, ofrece una interfaz de usuario intuitiva para una interacción fluida. Las características clave incluyen el manejo de clientes y pedidos, gestión de productos y generación de estadísticas perspicaces. La combinación de Spring Boot y Vue.js muestra competencia en el desarrollo de backend y diseño de frontend, reflejando un conjunto de habilidades completo en Java, desarrollo web e implementación de API RESTful.",
+  techSupport: "Analista de Soporte Técnico Jr.",
+  itIntern: "Practicante de TI",
 };
