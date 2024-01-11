@@ -98,6 +98,25 @@ export default {
       return this.dark ? '#312163' : '#F8F2FC'
     },
 
+    skillTitleColor() {
+      return this.dark ? '#E2E6EE' : '#2E2E48'
+    },
+
+    skillCardColor() {
+      return this.dark ? '#232338' : '#FFF'
+    },
+
+    skillTextColor() {
+      return this.dark ? '#E2E6EE' : '#2E2E48'
+    },
+
+    experiencePeriodColor() {
+      return this.dark ? '#D9DFE8' : '#47516B'
+    },
+
+    experienceLocationColor() {
+      return this.dark ? '#ACB1C3' : '#79819A'
+    },
 
   },
 }
@@ -139,7 +158,7 @@ export default {
 }
 
 .experience__period {
-  color: var(--Gray-Dark, #47516B);
+  color: v-bind(experiencePeriodColor);
 
   /* Body/Caption 1 */
   font-family: 'DM Sans', sans-serif;
@@ -152,7 +171,7 @@ export default {
 }
 
 .experience__location {
-  color: var(--Gray-Default, #79819A);
+  color: v-bind(experienceLocationColor);
 
   /* Body/Caption 2 */
   font-family: DM Sans, sans-serif;
@@ -164,8 +183,7 @@ export default {
 }
 
 .skill__title {
-  color: var(--Gray-Darker, #2E2E48);
-
+  color: v-bind(skillTitleColor);
   /* Body/Body 2 bold */
   font-family: DM Sans, sans-serif;
   font-size: 17px;
@@ -177,7 +195,7 @@ export default {
 
 .skill__card {
   border-radius: 4px 0px 0px 4px;
-  background: var(--White, #FFF);
+  background: v-bind(skillCardColor);
   display: flex;
   padding: 8px;
   flex-direction: column;
@@ -188,7 +206,7 @@ export default {
 }
 
 .skill__text {
-  color: var(--Gray-Darker, #2E2E48);
+  color: v-bind(skillTextColor);
 
   /* Body/Body 2 bold */
   font-family: DM Sans, sans-serif;

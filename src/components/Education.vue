@@ -1,6 +1,6 @@
 <template>
     <v-container fluid>
-        <v-list subheader two-line>
+        <v-list subheader two-line :color="listItemBackgroundColor">
             <v-list-item v-for="e in education" :key="e.title">
                 <v-list-item-avatar>
                     <v-icon color="#5531A7" size="24px">mdi-school</v-icon>
@@ -43,5 +43,13 @@ export default {
             },
         ],
     }),
+    computed: {
+        dark() {
+            return this.$vuetify.theme.dark
+        },
+        listItemBackgroundColor() {
+            return this.dark ? '#2E2E48' : '#fff'
+        },
+    },
 }
 </script>

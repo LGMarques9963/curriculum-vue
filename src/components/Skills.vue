@@ -2,13 +2,13 @@
     <v-container fluid>
         <v-row dense>
             <v-col v-for="skill in skills" :key="skill.title" cols="12">
-                <v-card color="#F7F9FC" elevation="0">
+                <v-card :color="cardColor" elevation="0">
                     <v-card-title><span class="skill__title">{{ skill.title }}</span></v-card-title>
 
                     <v-card-text>
                         <v-row>
                             <v-col v-for="item in skill.skills" :key="item.name" cols="3">
-                                <v-card class="skill__card" elevation="0" color="#F7F9FC">
+                                <v-card class="skill__card" elevation="0" :color="cardColor">
                                     <v-row align="center" class="spacer" no-gutters>
                                         <v-col>
                                             <v-avatar size="34px" color="#E1E7FE" class="ml-4">
@@ -170,7 +170,15 @@ export default {
                 ],
             },
         ],
-    })
+    }),
+    computed: {
+        dark() {
+            return this.$vuetify.theme.dark
+        },
+        cardColor() {
+            return this.dark ? '#232338' : '#F7F9FC'
+        },
+    },
 
 }
 </script>
