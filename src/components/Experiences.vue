@@ -1,6 +1,6 @@
 <template>
     <v-container fluid>
-        <v-list subheader two-line>
+        <v-list subheader two-line :color="listItemBackgroundColor">
             <v-list-item v-for="experience in experiences" :key="experience.title"
                 :class="{ 'active-item': experience.active }">
                 <v-list-item-avatar>
@@ -17,10 +17,10 @@
                 </v-list-item-content>
 
                 <v-list-item-action>
-                    <v-chip v-if="experience.active" class="ma-2" color="#efe2f9" text-color="#9251f7">
+                    <v-chip v-if="experience.active" class="ma-2" :color="chipBackgroundColor" :text-color="chipTextColor">
                         Present
                     </v-chip>
-                    <v-btn text>
+                    <v-btn text v-if="!experience.active">
                         <v-icon color="grey lighten-1" size="12" left>mdi-calendar</v-icon>
                         <span class="experience__period">{{ experience.period }}</span>
                     </v-btn>
@@ -59,6 +59,21 @@ export default {
             },
         ],
     }),
+
+    computed: {
+        dark(){
+            return this.$vuetify.theme.dark
+        },
+        chipBackgroundColor() {
+            return this.dark ? '#5531A7' : '#efe2f9'
+        },
+        chipTextColor() {
+            return this.dark ? '#EFE2F9' : '#9251f7'
+        },
+        listItemBackgroundColor() {
+            return this.dark ? '#2E2E48' : '#fff'
+        },
+    },
 }
 </script>
 

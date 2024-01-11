@@ -81,7 +81,7 @@ export default {
             return this.$vuetify.theme.dark
         },
         cardColor() {
-            return this.dark ? '#131320' : ''
+            return this.dark ? '#1d1d2f' : ''
         },
 
     },

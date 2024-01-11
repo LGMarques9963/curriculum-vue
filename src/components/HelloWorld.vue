@@ -93,6 +93,12 @@ export default {
     timelineColor() {
       return this.dark ? '#C696FC' : '#5531A7'
     },
+
+    activeExperienceColor() {
+      return this.dark ? '#312163' : '#F8F2FC'
+    },
+
+
   },
 }
 </script>
@@ -128,7 +134,8 @@ export default {
 
 .active-item {
   border-radius: 4px 4px 0px 0px;
-  background: var(--Primary-Lightest, #F8F2FC);
+  background: v-bind(activeExperienceColor);
+  /* background: var(--Primary-Lightest, #F8F2FC); */
 }
 
 .experience__period {
