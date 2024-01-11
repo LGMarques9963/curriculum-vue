@@ -3,7 +3,7 @@
         <div class="content">
             
             <div class="cover">
-                <img class="cover__image" alt="" src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg" />
+                <img class="cover__image" alt="" :src="image" />
             </div>
             <div class="container">
                 
@@ -102,6 +102,7 @@ export default {
     name: 'NavigationDrawer',
     data: () => ({
         drawer: null,
+        image: require("@/assets/2023-PagBrasil-Grupo-318.jpg"),
         links: [
             ['mdi-inbox-arrow-down', 'Inbox'],
             ['mdi-send', 'Send'],
