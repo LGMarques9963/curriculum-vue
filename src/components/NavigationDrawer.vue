@@ -1,26 +1,26 @@
 <template>
-    <v-navigation-drawer v-model="drawer" class="drawer" width="300">
+    <v-navigation-drawer v-model="drawer" :class="dark ? 'drawer__dark' :  'drawer'" width="300" :color = "dark ? '#2E2E48' : '#FFF'">
         <div class="content">
             
             <div class="cover">
-                <img class="cover__image" alt="" src="https://s3-alpha-sig.figma.com/img/f6ef/acfa/cb2a2ed7edbd45bea34a5190c44c0411?Expires=1704672000&Signature=XLvsUd1U9KlSLDSjAMQ-tyeXxEhogUzjDVHAEX9svP5Mvgrw4dZxiZs7h8xV7rxEjAbDwA6AuC8SkA~JD2K0FZ8-dmLtxxeKEnx3vljkjPKG8kKKSbMUPg4FxQQ5U6J~7Fc9BP7fz-0o8lX3Vw1ccS9p1YB50K3CmgxDXgqOTWZRUgpdn3uYEplCU2nLORi5ER57YsXdPwqp7jAQ~Z59GNkSWnF-IcFMEQ8iMmcOpiGz6E4IvGxoOVe~RefD5kIyDb7rU09y5FXWU6d7O~vzA8NQB1LPIdwzrUqQ8k7WrEkSjIjqovK~z5Bd6YxbE379Y4O4XeWoYdVYfblMkRF0Rg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+                <img class="cover__image" alt="" src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg" />
             </div>
             <div class="container">
                 
-                <div class="drawer__name">Lorran Marques</div>
+                <div :class="dark ? 'drawer__name__dark' : 'drawer__name'">Lorran Marques</div>
                 <div class="drawer__role">Full Stack Developer</div>
                 
                 <div class="divider">
                     <div class="divider1" />
                 </div>
                 
-                <div class="infos">
+                <div :class="dark ? 'infos__dark' : 'infos'">
                     <div class="info__text">Contact Info</div>
                     <v-list shaped>
                         <v-list-item v-for="(item, i) in basic_info" :key="i">
                             <div class="row pt-4">
                                 <v-list-item-icon>
-                                    <v-avatar color="#e2e6ee" size="32">
+                                    <v-avatar :color="dark ? '#2E2E48' : '#e2e6ee'" size="32">
                                         <v-icon>{{ item.icon }}</v-icon>
                                     </v-avatar>
                                 </v-list-item-icon>
@@ -28,7 +28,7 @@
                                     <v-list-item-subtitle class="info__text">
                                         {{ item.header }}
                                     </v-list-item-subtitle>
-                                    <v-list-item-title class="info__text info__header">{{ item.text }}</v-list-item-title>
+                                    <v-list-item-title :class="dark ? 'info__header__dark' : 'info__header'">{{ item.text }}</v-list-item-title>
                                 </v-list-item-content>
                             </div>
                         </v-list-item>
@@ -38,13 +38,13 @@
                 <div class="divider">
                     <div class="divider1" />
                 </div>
-                <div class="infos">
+                <div :class="dark ? 'infos__dark' : 'infos'">
                     <div class="info__text">Socials</div>
                     <v-list shaped>
                         <v-list-item v-for="(item, i) in socials" :key="i">
                             <div class="row pt-4">
                                 <v-list-item-icon>
-                                    <v-avatar color="#e2e6ee" size="32">
+                                    <v-avatar :color="dark ? '#2E2E48' : '#e2e6ee'" size="32">
                                         <v-icon>{{ item.icon }}</v-icon>
                                     </v-avatar>
                                 </v-list-item-icon>
@@ -52,8 +52,8 @@
                                     <v-list-item-subtitle class="info__text">
                                         {{ item.header }}
                                     </v-list-item-subtitle>
-                                    <v-list-item-title class="info__text info__header">
-                                        <a :href="item.url" target="_blank" class="info__text info__header no_underline">
+                                    <v-list-item-title :class="dark ? 'info__header__dark' : 'info__header'">
+                                        <a :href="item.url" target="_blank" :class="dark ? 'info__header__dark no_underline' : 'info__header no_underline'">
                                             {{ item.text }}
                                         </a>
                                     </v-list-item-title>
@@ -66,7 +66,7 @@
                 <div class="divider">
                     <div class="divider1" />
                 </div>
-                <div class="infos">
+                <div :class="dark ? 'infos__dark' : 'infos'">
                     <div class="info__text">Languages</div>
                     <v-list shaped>
                         <v-list-item v-for="(item, i) in languages" :key="i">
@@ -75,7 +75,7 @@
                                     <span :class="item.icon"></span>
                                 </v-list-item-icon>
                                 <v-list-item-content>
-                                    <v-list-item-title class="info__text info__header">{{ item.text }}</v-list-item-title>
+                                    <v-list-item-title :class="dark ? 'info__header__dark' : 'info__header'">{{ item.text }}</v-list-item-title>
                                     <v-list-item-subtitle class="info__text">
                                         {{ item.header }}
                                     </v-list-item-subtitle>
@@ -105,9 +105,8 @@ export default {
         ],
         basic_info: [
             { text: 'lorrangmarques@gmail.com', icon: 'mdi-email-outline', header: 'Email', url: "" },
-            { text: '##', icon: 'mdi-link-variant', header: 'Website', url: "https://happy-island-05692bd10.4.azurestaticapps.net/#/" },
-            { text: '+55 11 91234-5678', icon: 'mdi-phone', header: 'Phone', url: "" },
-            { text: 'São Paulo, Brazil', icon: 'mdi-map-marker', header: 'Address' }
+            { text: 'lgmarques.netlify.app', icon: 'mdi-link-variant', header: 'Website', url: "https://happy-island-05692bd10.4.azurestaticapps.net/#/" },
+            { text: 'Porto Alegre, Brazil', icon: 'mdi-map-marker', header: 'Address' }
         ],
         socials: [
             { text: '@lorrangmarques', icon: 'mdi-linkedin', header: 'LinkedIn', url: "https://www.linkedin.com/in/lgmarques/" },
@@ -120,6 +119,11 @@ export default {
             { text: 'Spanish', icon: 'fi fi-es', header: 'Fluent' },
         ],
     }),
+    computed: {
+        dark() {
+            return this.$vuetify.theme.dark
+        },
+    },
 
 }
 </script>
@@ -178,6 +182,20 @@ export default {
     height: 100%;
 }
 
+.drawer__dark {
+    width: 256px;
+    background: var(--Gray-Darker, #2E2E48);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+}
+
 .content {
     padding: 24px;
     width: 100%;
@@ -224,6 +242,22 @@ export default {
     letter-spacing: -0.02em;
 }
 
+.drawer__name__dark {
+    align-self: stretch;
+
+    color: var(--Gray-Lightest, #E2E6EE);
+
+    /* Heading/Heading 1 bold */
+    font-family: Outfit, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 125% */
+    letter-spacing: -0.02em;
+
+}
+
 .drawer__role {
     align-self: stretch;
 
@@ -248,6 +282,12 @@ export default {
     font-family: 'DM Sans', sans-serif;
 }
 
+.infos__dark {
+    color: var(--Gray-Light, #ACB1C3);
+    font-family: 'DM Sans', sans-serif;
+
+}
+
 .info__text {
     align-self: stretch;
     position: relative;
@@ -262,6 +302,16 @@ export default {
     line-height: 18px;
     font-weight: 500;
     color: #47516b;
+}
+
+.info__header__dark {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    color:  var(--Gray-Lighter, #D9DFE8);
+
 }
 
 .divider1 {
