@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ae9f09de-3353-4f16-b28c-bf6e19a1a6f5/deploy-status)](https://app.netlify.com/sites/lgmarques/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae9f09de-3353-4f16-b28c-bf6e19a1a6f5/deploy-status)](https://lgmarques.netlify.app)
 
 # Curriculum Vitae Page
 
