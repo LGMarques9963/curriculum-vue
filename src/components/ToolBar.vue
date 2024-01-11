@@ -4,7 +4,7 @@
             <v-menu top :offset-y="offset" :color="dark ? '#232339' : 'white'" open-on-hover>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn v-bind="attrs" v-on="on" :color="dark ? '#232339' : 'white'">
-                        <!-- <span>{{ $vuetify.lang.t('$vuetify.languages') }}</span> -->
+                        <span>{{ $vuetify.lang.t('$vuetify.languages') }}</span>
 
                         <v-icon>mdi-translate</v-icon>
                     </v-btn>
@@ -25,7 +25,7 @@
             </v-menu>
 
             <v-btn text @click="toggle">
-                <!-- <span>Dark/Light Mode</span> -->
+                <span>Dark/Light Mode</span>
 
                 <v-icon>mdi-theme-light-dark</v-icon>
             </v-btn>
