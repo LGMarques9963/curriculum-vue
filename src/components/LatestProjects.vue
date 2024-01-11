@@ -2,14 +2,14 @@
     <v-container fluid>
         <v-row dense>
             <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-                <v-card>
+                <v-card :color="cardColor">
                     <v-img :src="card.src" class="white--text align-end"
                         gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" height="200px">
                         <v-card-title>{{ card.title }}</v-card-title>
                     </v-img>
 
                     <v-card-actions>
-                        <v-btn text color="#5531A7" @click="card.show = !card.show">
+                        <v-btn text color="#8361d1" @click="card.show = !card.show">
                             DESCRIPTION
                             <v-icon v-if="!card.show" right>mdi-chevron-down</v-icon>
                             <v-icon v-else right>mdi-chevron-up</v-icon>
@@ -76,7 +76,16 @@ export default {
         ],
         show: false,
     }),
+    computed: {
+        dark() {
+            return this.$vuetify.theme.dark
+        },
+        cardColor() {
+            return this.dark ? '#131320' : ''
+        },
+
+    },
+
+    
 }
 </script>
-
-<style></style>
