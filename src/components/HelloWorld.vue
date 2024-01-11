@@ -8,16 +8,16 @@
       <v-col>
         <v-main class="main__background">
           
-          <v-container class="py-8 px-6 content__container" fluid light>
+          <v-container class="py-8 px-6 content__container" fluid>
             <v-timeline dense clipped align-top>
-              <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
+              <v-timeline-item class="mb-4" :color="timelineColor" :icon-color="timelineColor" small>
                 <span class="tile__text">
                   Latest Projects
                 </span>
                 <latest-projects />
               </v-timeline-item>
               
-              <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
+              <v-timeline-item class="mb-4" :color="timelineColor" :icon-color="timelineColor" small>
                 
                 
                 <span class="tile__text">
@@ -28,14 +28,14 @@
                 
               </v-timeline-item>
               
-              <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
+              <v-timeline-item class="mb-4" :color="timelineColor" :icon-color="timelineColor" small>
                 <span class="tile__text">
                   Skills
                 </span>
                 <skills />
               </v-timeline-item>
               
-              <v-timeline-item class="mb-4" color="#5531A7" icon-color="#5531A7" small>
+              <v-timeline-item class="mb-4" :color="timelineColor" :icon-color="timelineColor" small>
                 <span class="tile__text">
                   Education
                 </span>
@@ -76,12 +76,30 @@ export default {
 
     show: false,
   }),
+
+  computed: {
+    dark() {
+      return this.$vuetify.theme.dark
+    },
+
+    tileTextColor() {
+      return this.dark ? '#E2E6EE' : '#2E2E48'
+    },
+
+    backgroundColor() {
+      return this.dark ? '#232338' : '#F7F9FC'
+    },
+
+    timelineColor() {
+      return this.dark ? '#C696FC' : '#5531A7'
+    },
+  },
 }
 </script>
 
 <style>
 .main__background {
-  background: var(--Gray-Lightest-2, #F7F9FC) !important;
+  background: v-bind(backgroundColor) !important;
 
 }
 
@@ -97,8 +115,7 @@ export default {
 }
 
 .tile__text {
-  color: var(--Gray-Darker, #2E2E48) !important;
-
+  color: v-bind(tileTextColor) !important;
   /* Heading/Heading 2 bold */
   font-family: Outfit, sans-serif;
   font-size: 32px;
