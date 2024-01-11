@@ -1,10 +1,9 @@
 <template>
-    <v-theme-provider root>
 
-        <v-bottom-navigation :value="value" :color="this.$vuetify.theme.dark ? '#232339' : 'teal'" grow horizontal fixed height="48">
-            <v-menu top :offset-y="offset" :color="this.$vuetify.theme.dark ? '#232339' : 'teal'" open-on-hover>
+        <v-bottom-navigation :value="value" color="teal'" :background-color="dark ? '#232339' : 'white'" grow horizontal fixed height="48">
+            <v-menu top :offset-y="offset" :color="dark ? '#232339' : 'white'" open-on-hover>
                 <template v-slot:activator="{ on, attrs }">
-                    <v-btn v-bind="attrs" v-on="on" color="white">
+                    <v-btn v-bind="attrs" v-on="on" :color="dark ? '#232339' : 'white'">
                         <span>Language</span>
 
                         <v-icon>mdi-translate</v-icon>
@@ -32,7 +31,6 @@
                 <v-icon>mdi-theme-light-dark</v-icon>
             </v-btn>
         </v-bottom-navigation>
-    </v-theme-provider>
 </template>
 <script>
 
@@ -51,6 +49,12 @@ export default {
     methods: {
         toggle() {
             this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+        },
+    },
+
+    computed: {
+        dark() {
+            return this.$vuetify.theme.dark
         },
     },
 }
