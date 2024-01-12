@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae9f09de-3353-4f16-b28c-bf6e19a1a6f5/deploy-status)](https://app.netlify.com/sites/lgmarques/deploys)
+
 # Curriculum Vitae Page
 
 Welcome to my Curriculum Vitae (CV) project! This Vue.js and Vuetify-based web page serves as my professional resume, providing insights into my latest projects, work experience, skills, education, and contact information.
