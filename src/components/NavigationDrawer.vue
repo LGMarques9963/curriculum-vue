@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer v-model="drawer" :class="dark ? 'drawer__dark' :  'drawer'" width="300" :color = "dark ? '#2E2E48' : '#FFF'">
+    <v-navigation-drawer v-model="drawer" :class="dark ? 'drawer__dark' :  'drawer'" :color = "dark ? '#2E2E48' : '#FFF'">
         <div class="content">
             
             <div class="cover">
@@ -20,7 +20,7 @@
                         <v-list-item v-for="(item, i) in basic_info" :key="i">
                             <div class="row pt-4">
                                 <v-list-item-icon>
-                                    <v-avatar :color="dark ? '#2E2E48' : '#e2e6ee'" size="32">
+                                    <v-avatar :color="dark ? '#2E2E48' : '#e2e6ee'" size="24">
                                         <v-icon>{{ item.icon }}</v-icon>
                                     </v-avatar>
                                 </v-list-item-icon>
@@ -47,7 +47,7 @@
                         <v-list-item v-for="(item, i) in socials" :key="i">
                             <div class="row pt-4">
                                 <v-list-item-icon>
-                                    <v-avatar :color="dark ? '#2E2E48' : '#e2e6ee'" size="32">
+                                    <v-avatar :color="dark ? '#2E2E48' : '#e2e6ee'" size="24">
                                         <v-icon>{{ item.icon }}</v-icon>
                                     </v-avatar>
                                 </v-list-item-icon>

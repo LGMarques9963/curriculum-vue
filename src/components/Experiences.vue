@@ -20,11 +20,11 @@
                     <v-chip v-if="experience.active" class="ma-2" :color="chipBackgroundColor" :text-color="chipTextColor">
                         {{ $vuetify.lang.t('$vuetify.presentTime') }}
                     </v-chip>
-                    <v-btn text v-if="!experience.active">
+                    <v-btn text v-if="!experience.active" disabled>
                         <v-icon color="grey lighten-1" size="12" left>mdi-calendar</v-icon>
                         <span class="experience__period">{{ experience.period }}</span>
                     </v-btn>
-                    <v-btn text>
+                    <v-btn text disabled>
                         <v-icon color="grey lighten-1" size="12" left>mdi-map-marker</v-icon>
                         <span class="experience__location">{{ experience.location }}</span>
                     </v-btn>

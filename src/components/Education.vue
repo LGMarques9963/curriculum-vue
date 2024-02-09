@@ -10,11 +10,11 @@
                     <v-list-item-title>{{ e.title }}</v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-action>
-                    <v-btn text>
+                    <v-btn text disabled>
                         <v-icon color="grey lighten-1" size="12" left>mdi-calendar</v-icon>
                         <span class="experience__period">{{ e.period }}</span>
                     </v-btn>
-                    <v-btn text>
+                    <v-btn text disabled>
                         <v-icon color="grey lighten-1" size="12" left>mdi-map-marker</v-icon>
                         <span class="experience__location">{{ e.location }}</span>
                     </v-btn>
@@ -33,6 +33,12 @@ export default {
                 title: 'Pontifícia Universidade Católica do Rio Grande do Sul',
                 subtitle: '$vuetify.titleCS',
                 period: '2022-2026',
+                location: 'Porto Alegre, RS',
+            },
+            {
+                title: 'Universidade Federal do Rio Grande do Sul',
+                subtitle: '$vuetify.titleAstrophysics',
+                period: '2018 - 2022',
                 location: 'Porto Alegre, RS',
             },
             {
